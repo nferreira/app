@@ -3,7 +3,8 @@ package service
 import "context"
 
 const (
-	Payload = "payload"
+	HeadersField = "Headers"
+	BodyField = "Body"
 )
 
 type Service interface {
