@@ -1,8 +1,8 @@
 module github.com/nferreira/app
 
-go 1.14
+go 1.15
 
 require (
-    github.com/nferreira/adapter v0.1.5
-    github.com/nferreira/logging v0.1.5
+    github.com/nferreira/adapter v0.1.6
+    github.com/nferreira/logging v0.1.6
 )
