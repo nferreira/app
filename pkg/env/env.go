@@ -28,13 +28,13 @@ func GetInt(name string, defaultValue int) int {
 	return defaultValue
 }
 
-func GetDuration(name string, defaultValue time.Duration) time.Duration {
+func GetDuration(name string, duration time.Duration, defaultValue time.Duration) time.Duration {
 	if stringValue, ok := os.LookupEnv(name); ok {
 		if val, ok := strconv.Atoi(stringValue); ok == nil {
 			if debug {
 				fmt.Printf("Looking for ENV: [%s] found value %v\n", name, val)
 			}
-			return time.Duration(val)
+			return time.Duration(val) * duration
 		}
 		if debug {
 			fmt.Printf("Looking for ENV: [%s] found value %s, but could not parse to duration, therefore returning default value [%v]\n", name, stringValue, defaultValue)
