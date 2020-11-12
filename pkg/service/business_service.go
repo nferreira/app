@@ -19,7 +19,7 @@ type BusinessService interface {
 	Service
 	Name() string
 	CreateRequest() interface{}
-	Execute(ctx context.Context, args Params) *Result
+	Execute(ctx context.Context, params *Params) *Result
 }
 
 
