@@ -8,9 +8,17 @@ type (
 	Params   map[string]interface{}
 )
 
+type ResponseType int
+
+const (
+	JsonResponse ResponseType = iota
+	HtmlResponse
+)
+
 type Result struct {
 	Code     int
-	Headers  Headers
+	Headers Headers
+	ResponseType ResponseType
 	Response Response
 	Error    error
 }

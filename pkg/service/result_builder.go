@@ -9,6 +9,7 @@ func NewResultBuilder() *ResultBuilder {
 		Result{
 			Code:     0,
 			Headers:  Headers{},
+			ResponseType: JsonResponse,
 			Response: nil,
 			Error:    nil,
 		},
@@ -22,6 +23,11 @@ func (r *ResultBuilder) WithCode(code int) *ResultBuilder {
 
 func (r *ResultBuilder) WithHeaders(headers Headers) *ResultBuilder {
 	r.Headers = headers
+	return r
+}
+
+func (r *ResultBuilder) WithResponseType(responseType ResponseType) *ResultBuilder {
+	r.ResponseType = responseType
 	return r
 }
 
